@@ -10,6 +10,7 @@ public class WaypointTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnTriggerEnter (Collider col) {
-		col.GetComponent<GuardWander> ().HitTrigger ();
+		print ("hit");
+		col.transform.parent.GetComponent<GuardWander> ().HitTrigger ();
 	}
 }

@@ -23,7 +23,7 @@ public class ShadowDetection : MonoBehaviour {
 		Physics.Raycast (transform.position, (player.position - transform.position), out sunHit, Mathf.Infinity, sunMask);
 		//print (sunHit.transform);
 		if (sunHit.transform != null) {
-			if (sunHit.transform.tag == "Player"){
+			if (sunHit.transform.tag == "Player" || sunHit.transform.tag == "PlayerShadow"){
 				playerShadowScript.hidden = false;
 			}else{
 				playerShadowScript.hidden = true;

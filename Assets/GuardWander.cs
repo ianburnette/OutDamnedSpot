@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityStandardAssets.Characters.ThirdPerson;
 
 public class GuardWander : MonoBehaviour {
 
-	AICharacterControl aiControl;
+	NavMeshAgent nav;
+
+	GuardAnimation animScript;
 	public Transform[] waypoints;
 	public int waypointIndex;
 	public float waitAtPointTime;
@@ -12,14 +13,20 @@ public class GuardWander : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		aiControl = GetComponent<AICharacterControl> ();
+		nav = GetComponent<NavMeshAgent> ();
+		animScript = GetComponent<GuardAnimation> ();
 		SetNewDestination ();
 	}
-	
+
+	void OnEnable(){
+		nav.speed = 1f;
+	}
+
 	// Update is called once per frame
 	void Update () {
+
 		if (waiting) {
-			aiControl.agent.updateRotation = false;
+			//aiControl.agent.updateRotation = false;
 		}
 	}
 
@@ -27,7 +34,8 @@ public class GuardWander : MonoBehaviour {
 		if (!waiting) {
 			Invoke ("SetNewDestination", waitAtPointTime);
 			waiting = true;
-			aiControl.target = null;
+			nav.destination = transform.position;
+			animScript.StopWalking();
 		}
 	}
 
@@ -37,7 +45,8 @@ public class GuardWander : MonoBehaviour {
 		} else {
 			waypointIndex = 0;
 		}
-		aiControl.target = waypoints [waypointIndex];
+		nav.destination = waypoints [waypointIndex].position;
+		animScript.StartWalking ();
 		Invoke ("StopWaiting", waitAtPointTime / 2);
 	}
 
