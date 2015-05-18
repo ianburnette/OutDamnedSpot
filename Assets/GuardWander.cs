@@ -19,6 +19,8 @@ public class GuardWander : MonoBehaviour {
 	}
 
 	void OnEnable(){
+		nav = GetComponent<NavMeshAgent> ();
+		animScript = GetComponent<GuardAnimation> ();
 		nav.speed = 1f;
 	}
 

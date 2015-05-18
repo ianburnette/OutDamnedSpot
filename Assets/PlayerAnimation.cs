@@ -60,6 +60,10 @@ public class PlayerAnimation : MonoBehaviour {
 		anim.SetTrigger ("possess");
 	}
 
+	public void GetSliced(){
+		anim.SetTrigger ("slice");
+	}
+
 	public void ToggleMovement(){
 		if (movementScript.enabled) {
 			movementScript.enabled = false;

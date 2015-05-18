@@ -16,7 +16,7 @@ public class PlayerWash : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (basin.transform != null) {
+		if (basin) {
 			if (Input.GetButtonDown ("Fire1") && basin.transform != null) {
 				WashHands ();
 			}
