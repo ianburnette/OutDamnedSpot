@@ -1,0 +1,106 @@
+Level 1 - Find Macbeth
+
+	Intro
+MACBETH
+So foul and fair a day I have not seen.
+WEIRD SISTERS
+All hail, Macbeth, thou shalt be king hereafter!
+MACBETH 
+But the king yet lives: why do you dress me 
+In borrow'd robes? 
+
+	In-Game
+MACBETH
+    My dearest love, King Duncan comes to-night.
+LADY MACBETH
+    And when goes hence?
+MACBETH
+    To-morrow, as he purposes.
+LADY MACBETH
+    O, never
+    Shall sun that morrow see!
+    Your hand, your tongue: look like the innocent flower,
+    But be the serpent under't. He that's coming
+    Must be provided for: and you shall put
+    This night's great business into my dispatch.
+
+Level 2 
+
+	Intro
+MACBETH
+    If we should fail?
+LADY MACBETH
+    We fail!
+    But screw your courage to the sticking-place,
+    And we'll not fail.
+
+	In-Game
+LADY MACBETH
+				When Duncan is asleep--
+	What cannot you and I perform upon
+    The unguarded Duncan? what not put upon
+    His spongy officers, who shall bear the guilt
+    Of our great quell?
+MACBETH
+	Will it not be received,
+	When we have mark'd with blood those sleepy two
+	Of his own chamber and used their very daggers,
+	That they have done't?
+	
+
+Level 3
+
+	Intro
+MACBETH
+	I go, and it is done; the bell invites me.
+	Hear it not, Duncan; for it is a knell
+	That summons thee to heaven or to hell.
+		
+	In-Game
+LADY MACBETH
+	The raven himself is hoarse
+	That croaks the fatal entrance of Duncan
+	Under my battlements. 
+
+	Come, you spirits That tend on mortal thoughts, 
+	unsex me here,
+	And fill me from the crown to the toe top-full Of direst cruelty! 
+
+	make thick my blood;
+
+	Stop up the access and passage to remorse,
+	That no 
+	compunctious 
+	visitings of nature
+	Shake my fell purpose, 
+	nor keep peace between
+	The effect and it! 
+
+	Come to my woman's breasts,
+	And take my milk for gall, 
+	you murdering ministers,
+	Wherever in your
+	sightless 
+	substances
+	You wait on nature's mischief! 
+
+	Come, thick night,
+	And pall thee in the dunnest smoke of hell,
+
+	That my keen knife see not the wound it makes,
+	Nor heaven peep through the blanket of the dark,
+	To cry 'Hold, hold!'
+
+	Outro
+MACBETH
+	This is a sorry sight.
+Lady Macbeth
+	My hands are of your colour; but I shame
+	To wear a heart so white.
+							I hear a knocking--
+
+	After that
+MACBETH
+	Wake Duncan with thy knocking! I would thou couldst!
+
+
