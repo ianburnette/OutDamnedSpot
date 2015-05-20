@@ -6,6 +6,7 @@ public class PlayerDie : MonoBehaviour {
 	public float possessTime, slicedTime;
 	PlayerAnimation animScript;
 	PlayerMovement movementScript;
+	public Transform playerCanvas;
 
 	// Use this for initialization
 	void Start () {
@@ -19,10 +20,12 @@ public class PlayerDie : MonoBehaviour {
 	}
 
 	public void Sliced(Transform slicer){
-		transform.LookAt(new Vector3 (slicer.position.x, 100f, slicer.position.z));
+	//	transform.LookAt(new Vector3 (slicer.position.x, 0, slicer.position.z));
+		slicer.GetComponent<GuardAwareness> ().HideMark ();
+		playerCanvas.gameObject.SetActive (false);
 		animScript.GetSliced ();
 		Invoke ("RestartLevel", slicedTime);
-
+		movementScript.enabled = false;
 	}
 
 	public void Possessed(){

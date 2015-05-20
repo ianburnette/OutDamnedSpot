@@ -32,7 +32,9 @@ public class GuardKillTrigger : MonoBehaviour {
 	}
 
 	void OnDisable(){
-		player.GetComponent<PlayerTextBubble>().SetText("");
-		player.GetComponent<PlayerAttack>().attackTarget = null;//
+		if (player) {
+			player.GetComponent<PlayerTextBubble> ().SetText ("");
+			player.GetComponent<PlayerAttack> ().attackTarget = null;//
+		}
 	}
 }

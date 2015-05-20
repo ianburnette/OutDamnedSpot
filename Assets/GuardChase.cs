@@ -4,30 +4,36 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class GuardChase : MonoBehaviour {
 
-	AICharacterControl aiControl;
-	public bool suspicious;
-	public bool aware;
-	public Vector3 lastKnown;
-	public float suspiciousSpeed, awareSpeed;
+	public Animator anim;
+	public float chaseSpeed, attackDistance, attackCooldown, attackStoppingDist;
+	public Transform target;
+	public bool readyToAttack = true;
+	NavMeshAgent nav;
 
-	// Use this for initialization
-	void Start () {
-		aiControl = GetComponent<AICharacterControl> ();
-	}
-	
-	// Update is called once per frame
-	public void UpdatePlayerLocation (Vector3 location) {
-		lastKnown = location;
+	void Start(){
+		nav = GetComponent<NavMeshAgent> ();
+		//anim = GetComponent<Animator> ();
 	}
 
 	void Update(){
-		aiControl.target = null;
-		aiControl.targetLocation = lastKnown;
-		if (suspicious) {
-			aiControl.desiredSpeed = suspiciousSpeed;
-		}if (aware) {
-			aiControl.desiredSpeed = awareSpeed;
+		if (target) {
+			nav.destination = target.position;
+			nav.stoppingDistance = attackStoppingDist;
+			nav.speed = chaseSpeed;
+			if (readyToAttack && Vector3.Distance (transform.position, target.position) < attackDistance){
+				Attack();
+				readyToAttack = false;
+			}
+			//print (Vector3.Distance(transform.position, target.position));
 		}
 	}
-	
+
+	void Attack(){
+		anim.SetTrigger ("swing");
+		Invoke ("ReadyAttack", attackCooldown);
+	}
+
+	void ReadyAttack(){
+		readyToAttack = true;
+	}
 }

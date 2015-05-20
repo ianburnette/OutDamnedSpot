@@ -22,6 +22,7 @@ public class GuardWander : MonoBehaviour {
 		nav = GetComponent<NavMeshAgent> ();
 		animScript = GetComponent<GuardAnimation> ();
 		nav.speed = 1f;
+		SetNewDestination ();
 	}
 
 	// Update is called once per frame

@@ -39,7 +39,9 @@ public class basinScript : MonoBehaviour {
 	}
 	
 	void OnDisable(){
-		player.GetComponent<PlayerTextBubble>().SetText("");
-		player.GetComponent<PlayerWash>().basin = null;//("Space to kill");
+		if (player) {
+			player.GetComponent<PlayerTextBubble> ().SetText ("");
+			player.GetComponent<PlayerWash> ().basin = null;//("Space to kill");
+		}
 	}
 }

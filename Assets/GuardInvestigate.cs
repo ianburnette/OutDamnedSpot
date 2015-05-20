@@ -7,39 +7,48 @@ public class GuardInvestigate : MonoBehaviour {
 	GuardAwareness awarenessScript;
 	GuardAnimation animScript;
 
-	public float waitAtPointTime, wanderDist, investigateSpeed;
+	public float baseWaitAtPointTime, waitAtPointTime, wanderDist, investigateSpeed;
 	bool waiting;
 	public Vector3 destination;
 	public float margin;
 	public Vector3[] investigatePoints;
 	public float maxDist;
 	public int pointIndex;
+	public float predictionRange;
 	
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
 		investigatePoints = new Vector3[3];
 		nav = GetComponent<NavMeshAgent> ();
 		animScript = GetComponent<GuardAnimation> ();
 		awarenessScript = GetComponent<GuardAwareness> ();
-		SetNewDestination (destination);
+		//SetNewDestination (destination, 4f);
 	}
 
-	void SetNewDestination(Vector3 dest){
-
+	public void SetNewDestination(Vector3 dest, float speed){
+		nav.speed = speed;
 //		nav.destination = dest;
 //		investigatePoints [0] = dest;
-		CreateSamplePoints (dest);
+		CreateSamplePoints (dest, speed);
 	}
 
-	void CreateSamplePoints(Vector3 sampleOrigin){
+	void CreateSamplePoints(Vector3 sampleOrigin, float speed){
 		NavMeshHit hit;
-
-		if (NavMesh.SamplePosition (new Vector3 
-		                            (sampleOrigin.x, sampleOrigin.y, sampleOrigin.z), out hit, maxDist, NavMesh.AllAreas)){
-			investigatePoints[0] = hit.position;
+		if (speed > investigateSpeed) {
+			if (NavMesh.SamplePosition (new Vector3 
+			                            (sampleOrigin.x, sampleOrigin.y, sampleOrigin.z) + transform.forward * predictionRange, out hit, maxDist, NavMesh.AllAreas)) {
+				investigatePoints [0] = hit.position;
+				waitAtPointTime = baseWaitAtPointTime/2;
+			}
+		} else {
+			if (NavMesh.SamplePosition (new Vector3 
+			                            (sampleOrigin.x, sampleOrigin.y, sampleOrigin.z), out hit, maxDist, NavMesh.AllAreas)) {
+				investigatePoints [0] = hit.position;
+				waitAtPointTime = baseWaitAtPointTime;
+			}
 		}
 		nav.destination = investigatePoints [0];
-		nav.speed = investigateSpeed;
+		nav.speed = speed;
 		if (NavMesh.SamplePosition (new Vector3 
 		                            (sampleOrigin.x + Random.Range (3f, 4f), sampleOrigin.y, sampleOrigin.z + Random.Range (3f, 4f)), out hit, maxDist, NavMesh.AllAreas)){
 			investigatePoints[1] = hit.position;
@@ -71,12 +80,19 @@ public class GuardInvestigate : MonoBehaviour {
 			nav.speed = investigateSpeed;
 			animScript.StartWalking ();
 		}else{
-			ResumeWander();
+			Invoke("ResumeWander", baseWaitAtPointTime * 2f);
 		}
 		waiting = false;
 	}
 
 	void ResumeWander(){
 		awarenessScript.ResumeWandering ();
+	}
+
+	void OnDrawGizmos(){
+		Gizmos.color = Color.cyan;
+		foreach (Vector3 point in investigatePoints) {
+			Gizmos.DrawSphere(point, .2f);
+		}
 	}
 }

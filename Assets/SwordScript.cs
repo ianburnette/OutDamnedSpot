@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SwordScript : MonoBehaviour {
 
+	public float swordTime;
 	public Collider swordCollider;
 
 	// Use this for initialization
@@ -17,7 +18,7 @@ public class SwordScript : MonoBehaviour {
 
 	public void ActivateSwordTrigger(){
 		swordCollider.enabled = true;
-		Invoke ("Deactivate", 1f);
+		Invoke ("Deactivate", swordTime);
 	}
 
 	void Deactivate(){

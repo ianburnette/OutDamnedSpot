@@ -3,8 +3,10 @@ using System.Collections;
 
 public class RagdollScript : MonoBehaviour {
 
+	public Transform canvas;
 	public GameObject ghostPrefab;
 	public Rigidbody[] rbs;
+	GuardAwareness awarenessScript;	
 	GuardAnimation animScript;
 	public LayerMask deadMask;
 	public Transform trigger;
@@ -15,6 +17,7 @@ public class RagdollScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		animScript = GetComponent<GuardAnimation> ();
+		awarenessScript = GetComponent <GuardAwareness> ();
 		nav = GetComponent<NavMeshAgent> ();
 	}
 
@@ -27,7 +30,12 @@ public class RagdollScript : MonoBehaviour {
 	}
 
 	public void Die(){
-		animScript.DisableSelf ();// = false;
+		if (canvas)
+			Destroy (canvas.gameObject);
+		if (animScript!=null)
+			animScript.DisableSelf ();// = false;
+		if (awarenessScript!=null)
+			awarenessScript.enabled = false;
 		trigger.gameObject.SetActive (false);
 		foreach (Rigidbody rb in rbs) {
 			rb.GetComponent<Collider>().isTrigger=false;
