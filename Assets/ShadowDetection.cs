@@ -10,7 +10,8 @@ public class ShadowDetection : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//playerShadowScript = player.GetComponent<PlayerShadow> ();
+		player = GameObject.Find ("Player").transform;
+		playerShadowScript = player.GetComponent<PlayerShadow> ();
 	}
 	
 	// Update is called once per frame

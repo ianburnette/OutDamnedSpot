@@ -1,0 +1,129 @@
+fileFormatVersion: 2
+guid: a7ce3450055630942bad593931fd0a94
+timeCreated: 1432163230
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Door2
+    100002: Door2Frame
+    100004: Door2Handle
+    100006: Door2Step
+    100008: Door3
+    100010: Door3Frame
+    100012: Door3Handle
+    100014: Door3Step
+    100016: Door4Frame
+    100018: Door4Handle1
+    100020: Door4Handle2
+    100022: Door4Step
+    100024: //RootNode
+    400000: Door2
+    400002: Door2Frame
+    400004: Door2Handle
+    400006: Door2Step
+    400008: Door3
+    400010: Door3Frame
+    400012: Door3Handle
+    400014: Door3Step
+    400016: Door4Frame
+    400018: Door4Handle1
+    400020: Door4Handle2
+    400022: Door4Step
+    400024: //RootNode
+    2300000: Door2
+    2300002: Door2Frame
+    2300004: Door2Handle
+    2300006: Door2Step
+    2300008: Door3
+    2300010: Door3Frame
+    2300012: Door3Handle
+    2300014: Door3Step
+    2300016: Door4Frame
+    2300018: Door4Handle1
+    2300020: Door4Handle2
+    2300022: Door4Step
+    3300000: Door2
+    3300002: Door2Frame
+    3300004: Door2Handle
+    3300006: Door2Step
+    3300008: Door3
+    3300010: Door3Frame
+    3300012: Door3Handle
+    3300014: Door3Step
+    3300016: Door4Frame
+    3300018: Door4Handle1
+    3300020: Door4Handle2
+    3300022: Door4Step
+    4300000: Door4Handle2
+    4300002: Door4Frame
+    4300004: Door4Handle1
+    4300006: Door4Step
+    4300008: Door3Frame
+    4300010: Door3
+    4300012: Door3Handle
+    4300014: Door3Step
+    4300016: Door2Step
+    4300018: Door2Handle
+    4300020: Door2
+    4300022: Door2Frame
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
