@@ -22,7 +22,11 @@ public class PlayerMovement : MonoBehaviour {
 			currentSpeed = walkSpeed;
 
 		///rb.velocity = new Vector3 (hInput * right.x * forward.x, 0, vInput * forward.z * right.z) * currentSpeed * Time.deltaTime;
-		rb.velocity = (hInput * transform.right * currentSpeed) + (vInput * transform.forward * currentSpeed);
+		Vector3 unadjustedVelocity = (hInput * transform.right * currentSpeed) + (vInput * transform.forward * currentSpeed);
+		rb.velocity = new Vector3 (unadjustedVelocity.x, rb.velocity.y, unadjustedVelocity.z);
+			//new Vector3 (vInput * currentSpeed * transform.right.x * transform.right.z, rb.velocity.y, hInput * currentSpeed * transform.right.z);
+		//print (transform.right);
+	//		(hInput * transform.right * currentSpeed) + (vInput * transform.forward * currentSpeed);
 	//	rb.velocity = (vInput * transform.forward * currentSpeed);
 
 	}
