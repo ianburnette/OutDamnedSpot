@@ -22,7 +22,7 @@ public class PlayerAnimation : MonoBehaviour {
 	void FaceDirection(){
 		Vector3 lookVector = new Vector3 (rb.velocity.x, height, rb.velocity.z);
 		Vector3 targetVector = Vector3.Lerp (model.transform.rotation.eulerAngles, lookVector, speed);
-		if (rb.velocity.magnitude > margin) {
+		if (rb.velocity.magnitude > margin && Time.timeScale!=0) {
 			model.LookAt (transform.position + lookVector, Vector3.up);
 		}
 	}
@@ -48,7 +48,7 @@ public class PlayerAnimation : MonoBehaviour {
 		Invoke ("ToggleMovement", attackTime);
 		targetToAttack.position = guardPosition.position;
 	//	transform.position = guardGettingAttacked.position - guardGettingAttacked.forward/2;
-		model.transform.rotation = guardGettingAttacked.GetChild(1).rotation;
+	//	model.transform.rotation = guardGettingAttacked.GetChild(1).rotation;
 		anim.SetTrigger ("attack");
 	}
 

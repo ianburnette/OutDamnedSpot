@@ -5,14 +5,20 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class GuardChase : MonoBehaviour {
 
 	public Animator anim;
+	public GuardAnimation animScript;
 	public float chaseSpeed, attackDistance, attackCooldown, attackStoppingDist;
 	public Transform target;
 	public bool readyToAttack = true;
 	NavMeshAgent nav;
 
 	void Start(){
+		animScript = GetComponent<GuardAnimation> ();
 		nav = GetComponent<NavMeshAgent> ();
 		//anim = GetComponent<Animator> ();
+	}
+
+	void OnEnable(){
+		animScript.StartWalking ();
 	}
 
 	void Update(){

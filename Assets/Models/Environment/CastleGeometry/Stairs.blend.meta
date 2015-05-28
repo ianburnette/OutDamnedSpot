@@ -8,15 +8,40 @@ ModelImporter:
     100000: Stair1LongWide
     100002: Stair1Wide
     100004: //RootNode
+    100006: Stair1LongWide_001
+    100008: Stair1Wide_001
+    100010: Stair1LongWide_002
+    100012: Stair1MediumWide
+    100014: Stair1MediumWideColliders_001
     400000: Stair1LongWide
     400002: Stair1Wide
     400004: //RootNode
+    400006: Stair1LongWide_001
+    400008: Stair1Wide_001
+    400010: Stair1LongWide_002
+    400012: Stair1MediumWide
+    400014: Stair1MediumWideColliders_001
     2300000: Stair1LongWide
     2300002: Stair1Wide
+    2300004: Stair1LongWide_001
+    2300006: Stair1Wide_001
+    2300008: Stair1LongWide_002
+    2300010: Stair1MediumWide
+    2300012: Stair1MediumWideColliders_001
     3300000: Stair1LongWide
     3300002: Stair1Wide
+    3300004: Stair1LongWide_001
+    3300006: Stair1Wide_001
+    3300008: Stair1LongWide_002
+    3300010: Stair1MediumWide
+    3300012: Stair1MediumWideColliders_001
     4300000: Stair1LongWide
     4300002: Stair1Wide
+    4300004: Stair1LongWide_001
+    4300006: Stair1Wide_001
+    4300008: Stair1MediumWide
+    4300010: Stair1LongWide_002
+    4300012: Stair1MediumWideColliders_001
     7400000: Default Take
     9500000: //RootNode
   materials:

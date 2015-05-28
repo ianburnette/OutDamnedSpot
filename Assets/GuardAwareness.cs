@@ -28,6 +28,8 @@ public class GuardAwareness : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.Find ("Player").transform;
+		macbeth = GameObject.Find ("Macbeth").transform;
 		investigateScript = GetComponent<GuardInvestigate> ();
 		wanderScript = GetComponent<GuardWander> ();
 		chaseScript = GetComponent<GuardChase> ();
@@ -39,10 +41,10 @@ public class GuardAwareness : MonoBehaviour {
 		canSeeMacbeth = CheckFor (macbeth);
 		CheckLineOfSight ();
 
-		if ((canSeePlayer == 1 && suspicion < 1) || (canSeeMacbeth == 1 && suspicion < 1)) {
+		if ((canSeePlayer == 1 && suspicion < 1 && player.tag == "Player") || (canSeeMacbeth == 1 && suspicion < 1)) {
 			UpdateSuspicion ();
 			behavior = 2;
-			print ("in loop");
+//			print ("in loop");
 		} else if (canSeePlayer == 2 && chaseScript.target != player && player.tag == "Player") {
 			SeeTarget (player);
 			behavior = 3;
@@ -113,7 +115,7 @@ public class GuardAwareness : MonoBehaviour {
 		chaseScript.enabled = false;
 		wanderScript.enabled = false;
 		investigateScript.enabled = true;
-		print ("Seek");
+//		print ("Seek");
 		investigateScript.SetNewDestination (target.position, seekSpeed);
 	}
 

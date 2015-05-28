@@ -8,6 +8,7 @@ public class MacbethDie : MonoBehaviour {
 	GuardWander wanderScript;
 	GuardAnimation animationScript;
 	NavMeshAgent nav;
+	public GameController gc;
 	public Transform camFocus;
 
 	// Use this for initialization
@@ -24,7 +25,8 @@ public class MacbethDie : MonoBehaviour {
 	}
 
 	public void Sliced(Transform slicer){
-		//print ("activated");
+		//print ("sliced");
+		gc.EndLevel (1);
 		camFocus.parent = transform;
 		camFocus.position = transform.position;
 		nav.enabled = false;
@@ -32,5 +34,7 @@ public class MacbethDie : MonoBehaviour {
 		ragdollScr.Die ();
 		wanderScript.enabled = false;
 		animationScript.enabled = false;
+	
+		ragdollScr.Die ();
 	}
 }

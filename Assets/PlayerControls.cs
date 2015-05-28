@@ -15,8 +15,9 @@ public class PlayerControls : MonoBehaviour {
 	void Update () {
 		h = Input.GetAxis ("Horizontal");
 		v = Input.GetAxis ("Vertical");
+		movementScript.Move(h,v);
 		if (h != 0 || v != 0) {
-			movementScript.Move(h,v);
+			//movementScript.Move(h,v);
 		}
 	}
 }

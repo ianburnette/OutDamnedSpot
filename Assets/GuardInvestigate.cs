@@ -49,6 +49,7 @@ public class GuardInvestigate : MonoBehaviour {
 		}
 		nav.destination = investigatePoints [0];
 		nav.speed = speed;
+		animScript.StartWalking ();
 		if (NavMesh.SamplePosition (new Vector3 
 		                            (sampleOrigin.x + Random.Range (3f, 4f), sampleOrigin.y, sampleOrigin.z + Random.Range (3f, 4f)), out hit, maxDist, NavMesh.AllAreas)){
 			investigatePoints[1] = hit.position;
@@ -76,7 +77,9 @@ public class GuardInvestigate : MonoBehaviour {
 	void NextPoint(){
 		if (pointIndex < investigatePoints.Length-1){
 			pointIndex++;
-			nav.destination = investigatePoints[pointIndex];
+			if (nav.enabled){
+				nav.destination = investigatePoints[pointIndex];
+			}
 			nav.speed = investigateSpeed;
 			animScript.StartWalking ();
 		}else{

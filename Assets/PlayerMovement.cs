@@ -21,8 +21,16 @@ public class PlayerMovement : MonoBehaviour {
 		else
 			currentSpeed = walkSpeed;
 
+		if (hInput == 0) {
+
+		}
 		///rb.velocity = new Vector3 (hInput * right.x * forward.x, 0, vInput * forward.z * right.z) * currentSpeed * Time.deltaTime;
 		Vector3 unadjustedVelocity = (hInput * transform.right * currentSpeed) + (vInput * transform.forward * currentSpeed);
+//		if (hInput == 0) {
+//			unadjustedVelocity.x = 0;	
+//		}if (vInput == 0) {
+//			unadjustedVelocity.z = 0;
+//		}
 		rb.velocity = new Vector3 (unadjustedVelocity.x, rb.velocity.y, unadjustedVelocity.z);
 			//new Vector3 (vInput * currentSpeed * transform.right.x * transform.right.z, rb.velocity.y, hInput * currentSpeed * transform.right.z);
 		//print (transform.right);

@@ -1,0 +1,15 @@
+Macbeth - http://shakespeare.mit.edu/macbeth/full.html
+walls, doors, stone texture, stairs - Daniel Andersson http://opengameart.org/content/modular-medieval-building-pack
+barrel & barrel texture - mastahcez http://opengameart.org/content/crate-barrel-bundle
+table & table texture - Ulf http://opengameart.org/content/medieval-trestle-table
+paintings/frames - various old public domain paintings, but collected by eleazzaar http://opengameart.org/content/medieval-trestle-table
+bed - Doug C http://www.blendswap.com/blends/view/66531
+bottle/mug - Clint Bellanger http://www.blendswap.com/blends/view/66531
+carpet texture 1 - Orangen-Stock http://orangen-stock.deviantart.com/art/Carpet-Texture-5-169736002
+carpet texture 2 - Lost and Taken http://lostandtaken.com/gallery/fabric11.html
+stab SFX - Northern_Monkey http://www.freesound.org/people/Northern_Monkey/sounds/176543/
+guard fall SFX - avakas http://www.freesound.org/people/avakas/sounds/144113/
+wash hands SFX - RSilveira_88 http://www.freesound.org/people/RSilveira_88/sounds/216394/
+footstep SFX - OwlStorm http://www.freesound.org/people/OwlStorm/sounds/151237/
+fire SFX - leosalom http://www.freesound.org/people/leosalom/sounds/234288/
+wind SFX - Bosk1 http://www.freesound.org/people/Bosk1/sounds/144083/

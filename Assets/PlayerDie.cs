@@ -7,6 +7,7 @@ public class PlayerDie : MonoBehaviour {
 	PlayerAnimation animScript;
 	PlayerMovement movementScript;
 	public Transform playerCanvas;
+	public GameController gc;
 
 	// Use this for initialization
 	void Start () {
@@ -24,18 +25,20 @@ public class PlayerDie : MonoBehaviour {
 		slicer.GetComponent<GuardAwareness> ().HideMark ();
 		playerCanvas.gameObject.SetActive (false);
 		animScript.GetSliced ();
-		Invoke ("RestartLevel", slicedTime);
+	//	Invoke ("RestartLevel", slicedTime);
 		movementScript.enabled = false;
+		gc.EndLevel (0);
 	}
 
 	public void Possessed(){
 		animScript.Possess ();
 		movementScript.enabled = false;
-		Invoke ("RestartLevel", possessTime);
+		gc.EndLevel (0);
+	//	Invoke ("RestartLevel", possessTime);
 	}
 
 	void RestartLevel(){
-		Application.LoadLevel (Application.loadedLevel);
+		//Application.LoadLevel (Application.loadedLevel);
 		                   
 	}
 }

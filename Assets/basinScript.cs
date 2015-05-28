@@ -14,7 +14,7 @@ public class basinScript : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+		player = GameObject.Find ("Player").transform;
 	}
 	
 	// Update is called once per frame
@@ -24,17 +24,19 @@ public class basinScript : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider col){
 		if (col.transform.tag == "Player" || col.transform.tag == "PlayerShadow") {
-			player = col.transform;
-			col.GetComponent<PlayerTextBubble>().SetText("Wash Hands");
-			col.GetComponent<PlayerWash>().basin = transform;//("Space to kill");
+			//player = col.transform;
+			if (col.transform.root.GetComponent<PlayerWash>().dirty == true){
+				col.transform.root.GetComponent<PlayerTextBubble>().SetText("Wash Hands");
+				col.transform.root.GetComponent<PlayerWash>().basin = transform;//("Space to kill");
+			}
 		}
 	}
 	
 	void OnTriggerExit (Collider col){
 		if (col.transform.tag == "Player" || col.transform.tag == "PlayerShadow") {
-			player = col.transform;
-			col.GetComponent<PlayerTextBubble>().SetText("");
-			col.GetComponent<PlayerWash>().basin = null;//("Space to kill");
+			//player = col.transform;
+			col.transform.root.GetComponent<PlayerTextBubble>().SetText("");
+			col.transform.root.GetComponent<PlayerWash>().basin = null;//("Space to kill");
 		}
 	}
 	

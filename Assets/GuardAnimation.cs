@@ -18,7 +18,12 @@ public class GuardAnimation : MonoBehaviour {
 	}
 
 	public void DisableSelf(){
+		print ("disabling animator");
 		anim.enabled = false;
+	}
+
+	public void KillDuncan(){
+		anim.SetTrigger ("killDuncan");
 	}
 
 	// Use this for initialization
